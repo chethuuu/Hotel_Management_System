@@ -68,7 +68,7 @@ const AddRoom = () => {
                             </div>
                             <div class="col-md-6">
                                 <label for="type"> Room Type  </label>
-                                <input class="form-control" id="type" onChange={(f) => settype(f.target.value)} placeholder="Enter Room Type" required/>
+                                <input class="form-control" id="type" onChange={(f) => settype(f.target.value)} placeholder="Enter Room Type" />
                             </div>
                         </div>
 
@@ -107,7 +107,7 @@ const AddRoom = () => {
                             <textarea class="form-control" onChange={(f) => setfeatures(f.target.value)} type="text" placeholder="Enter Features" rows="3" /> <br />
                         </div>
                         <div class="col-md-12">
-                            <label for="floatingPassword"  >Description   </label>
+                            <label for="floatingPassword" >Description   </label>
                             <textarea class="form-control" onChange={(f) => setdescription(f.target.value)} type="text" placeholder="Enter Description" rows="6" />
                         </div> <br />
                         <div className="d-grid gap-2 d-md-flex justify-content-md-end">

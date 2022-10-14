@@ -1,12 +1,9 @@
-
 export const Validateroom=(formData) =>{
-
     const messages ={
-       NAME :"The room Name should at least be 3 letters...",
-       RENTPERDAY : " The RENT PER DAY  should at least be 3 letters...",
-       DESCRIPTION : "The description should at least be 3 letters..."
+       NAME :"The Room Name should at least be 3 letters...!",
+       FEATURES : " The Features should at least be 10 letters...!",
+       DESCRIPTION : "The Description should at least be 20 letters...!"
     };
-
     const output ={
             status : false,
             message : null
@@ -17,16 +14,14 @@ export const Validateroom=(formData) =>{
         output.message = messages.NAME;
         output.status = false;
         return output;
-    
     }
-   
-    if(formData.rentperday.length <= 2)
+    if(formData.features.length <= 10)
     {
-        output.message = messages.RENTPERDAY;
+        output.message = messages.FEATURES;
         output.status = false;
         return output;
     } 
-    if(formData.description.length <= 2)
+    if(formData.description.length <= 20)
     {
         output.message = messages.DESCRIPTION;
         output.status = false;
@@ -37,5 +32,4 @@ export const Validateroom=(formData) =>{
         output.status = true;
         return output;
     }
- 
 };
