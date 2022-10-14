@@ -46,11 +46,10 @@ const AllRooms = () => {
   const deleteRoom = id => {
     axios.delete(`http://localhost:5000/room/RemoveRooms/${id}`)
       .then(res => {
-        Swal.fire('Congrats', 'Remove Room Successfully', 'success')
+        Swal.fire('Congrats', 'Remove Room Successfully ', 'success')
       })
-    setusers(users.filter(elem => elem._id !== id))
+      setusers(users.filter(elem => elem._id !== id))
   }
-
 
   function SearchAdult() {
     axios.get(`http://localhost:5000/room/getadult/${adult}`)
