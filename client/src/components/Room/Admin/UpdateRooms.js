@@ -108,21 +108,20 @@ const UpdateRooms = () => {
     let msg = validate?.message;
     console.log(msg);
 
-    if(validate.status == false)
-    {
+    if (validate.status == false) {
       Swal.fire({
         toast: true,
         icon: 'warning',
-        html: `<span>${msg}</span>`,
+        html: <span>${msg}</span>,
         animation: true,
         position: 'top-right',
         showConfirmButton: false,
         timer: 2000,
         timerProgressBar: false,
-    });
+      });
     }
 
-    else{
+    else {
 
       let data = await updateRoomsByID(id, newdata);
       console.log("Update success ", data);
@@ -131,15 +130,15 @@ const UpdateRooms = () => {
           Swal.fire('Congrats', 'Update room  successfully ', 'success')
           navigate("/mainroom");
         }
-  
+
       } else {
         {
           Swal.fire('Congrats', 'Update room successfully ', 'success')
           navigate("/mainroom");
         }
       }
-}
     }
+  }
 
 
   return (
@@ -156,7 +155,8 @@ const UpdateRooms = () => {
               </div>
               <div class="col-md-6">
                 <label for="type"> Room Type  </label>
-                <input class="form-control" id="type" value={type} onChange={handletype} placeholder="Enter Room Type" />
+                <input
+                  class="form-control" id="type" value={type} onChange={handletype} placeholder="Enter Room Type" />
               </div>
             </div>
 
@@ -210,4 +210,3 @@ const UpdateRooms = () => {
 };
 
 export default UpdateRooms;
-

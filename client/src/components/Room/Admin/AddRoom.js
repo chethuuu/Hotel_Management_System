@@ -64,7 +64,7 @@ const AddRoom = () => {
                         <div className="row py-3">
                             <div className="col-md-6">
                                 <label for="name"> Room Name </label>
-                                <input type="text" class="form-control" onChange={(f) => setname(f.target.value)} placeholder="Enter Room Name " required/>
+                                <input type="text" class="form-control" onChange={(f) => setname(f.target.value)} placeholder="Enter Room Name" required/>
                             </div>
                             <div class="col-md-6">
                                 <label for="type"> Room Type  </label>

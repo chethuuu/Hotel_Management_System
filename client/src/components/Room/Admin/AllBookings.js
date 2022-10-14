@@ -4,7 +4,6 @@ import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 import { Button } from 'react-bootstrap'
 import RoomPdfReport from './RoomPdfReport';
 import Swal from "sweetalert2";
-import { RiDeleteBin6Fill } from 'react-icons/ri'
 
 function AllBookings() {
 
@@ -24,7 +23,6 @@ function AllBookings() {
         axios.delete(`http://localhost:5000/book/deletestatus/${id}`)
             .then(res => {
                 Swal.fire('Congrats', 'Remove Booking Successfully ', 'success')
-            })
         setRoom(room.filter(elem => elem._id !== id))
     }
 
