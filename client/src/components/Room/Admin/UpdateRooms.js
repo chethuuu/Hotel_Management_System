@@ -106,13 +106,13 @@ const UpdateRooms = () => {
     console.log("Update success ", data);
     if (!data?.data?.foodName) {
       {
-        Swal.fire('Congrats', 'Update room  successfully ', 'success')
+        Swal.fire('Congrats', 'Update Room Successfully', 'success')
         navigate("/mainroom");
       }
 
     } else {
       {
-        Swal.fire('Congrats', 'Update room successfully ', 'success')
+        Swal.fire('Congrats', 'Update Room Successfully', 'success')
         navigate("/mainroom");
       }
     }
@@ -128,51 +128,51 @@ const UpdateRooms = () => {
             <div className="row py-3">
               <div className="col-md-6">
                 <label for="name"> Room Name </label>
-                <input type="text" class="form-control" value={name} onChange={handlename} placeholder="room name " />
+                <input type="text" class="form-control" value={name} onChange={handlename} placeholder="Enter Room Name" readOnly/>
               </div>
               <div class="col-md-6">
                 <label for="type"> Room Type  </label>
-                <input class="form-control" id="type" value={type} onChange={handletype} placeholder="Enter Room Type" />
+                <input class="form-control" id="type" value={type} onChange={handletype} placeholder="Enter Room Type" required/>
               </div>
             </div>
 
             <div className="row py-3">
               <div class="col-md-3">
                 <label for="count"> Adult </label>
-                <input class="form-control" type="number" value={adult} onChange={handleAdult} placeholder="No of Adult" />
+                <input class="form-control" type="number" value={adult} onChange={handleAdult} placeholder="No of Adult" required/>
               </div>
               <div class="col-md-4">
                 <label for="rent">  Children </label>
-                <input class="form-control" type="number" value={children} onChange={handleChildren} placeholder="No of Children" />
+                <input class="form-control" type="number" value={children} onChange={handleChildren} placeholder="No of Children" required/>
               </div>
               <div class="col-md-5">
                 <label for="img">  Bed Room </label>
-                <input class="form-control" type='number' value={bedroom} onChange={handleBedroom} placeholder="No of BedRoom" />
+                <input class="form-control" type='number' value={bedroom} onChange={handleBedroom} placeholder="No of BedRoom" required/>
               </div>
             </div>
 
             <div className="row py-3">
               <div class="col-md-3">
                 <label for="count"> Max Count </label>
-                <input class="form-control" type="number" value={maxcount} onChange={handlemaxcount} placeholder="Enter Max Count" />
+                <input class="form-control" type="number" value={maxcount} onChange={handlemaxcount} placeholder="Enter Max Count" required/>
               </div>
               <div class="col-md-4">
                 <label for="rent">  Rent Per day (LKR) </label>
-                <input class="form-control" type="number" value={rentperday} onChange={handlerentperday} placeholder="Enter Rent Per Day" />
+                <input class="form-control" type="number" value={rentperday} onChange={handlerentperday} placeholder="Enter Rent Per Day" required/>
               </div>
               <div class="col-md-5">
-                <label for="img">  Image URL </label>
-                <input class="form-control" id="url" value={imageurls} onChange={handleimageurls} placeholder="Enter IMG Url" />
+                <label for="img"> Image URL </label>
+                <input class="form-control" id="url" value={imageurls} onChange={handleimageurls} placeholder="Enter IMG Url" readOnly/>
               </div>
             </div>
 
             <div class="col-md-12">
               <label for="features"> Features </label>
-              <textarea class="form-control" type="text" value={features} onChange={handlefeaturess} placeholder="Enter Features" rows="3" /> <br />
+              <textarea class="form-control" type="text" value={features} onChange={handlefeaturess} placeholder="Enter Features" rows="3" required/> <br />
             </div>
             <div class="col-md-12">
-              <label for="floatingPassword"  >Description   </label>
-              <textarea class="form-control" type="text" value={description} onChange={handledescription} placeholder="Enter Description" rows="6" />
+              <label for="floatingPassword">Description   </label>
+              <textarea class="form-control" type="text" value={description} onChange={handledescription} placeholder="Enter Description" rows="6" required/>
             </div> <br />
             <div className="d-grid gap-2 d-md-flex justify-content-md-end">
               <MDBBtn rounded color="danger" type="submit" onClick={(e) => UpdateData(e)} className="btn btn-warning"> Update room </MDBBtn>

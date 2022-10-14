@@ -3,7 +3,8 @@ import axios from "axios";
 import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 import { Button } from 'react-bootstrap'
 import RoomPdfReport from './RoomPdfReport';
-import {RiDeleteBin6Fill} from 'react-icons/ri'
+import { RiDeleteBin6Fill } from 'react-icons/ri'
+import Swal from "sweetalert2";
 
 function AllBookings() {
 
@@ -19,14 +20,12 @@ function AllBookings() {
         }
     }, []);
 
-    const deleteBooking = async (id) => {
-        try {
-            const res = await axios.delete(`http://localhost:5000/book/deletestatus/${id}`)
-            const newRoom = room.filter(room => room._id !== id);
-            setRoom(newRoom);
-        } catch (err) {
-            console.log(err);
-        }
+    const deleteBooking = id => {
+        axios.delete(`http://localhost:5000/book/deletestatus/${id}`)
+            .then(res => {
+                Swal.fire('Congrats', 'Remove Booking details Successfully', 'success')
+            })
+        setRoom(room.filter(elem => elem._id !== id))
     }
 
     return (
@@ -63,7 +62,7 @@ function AllBookings() {
                                         <td>{topic.todate}</td>
                                         <td>LKR: {topic.totAmount} /=</td>
                                         <td><button className='btn btn-success'>{topic.status}</button></td>
-                                        <td><button className='btn btn-danger' onClick={() => deleteBooking(topic._id)}><RiDeleteBin6Fill/></button></td>
+                                        <td><button className='btn btn-danger' onClick={() => deleteBooking(topic._id)}><RiDeleteBin6Fill /></button></td>
                                     </tr>
                                 )
                                 )

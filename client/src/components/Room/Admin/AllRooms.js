@@ -3,6 +3,7 @@ import axios from "axios";
 import { Button, Modal, Carousel } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { DatePicker, Space } from 'antd';
+import Swal from "sweetalert2";
 import moment from 'moment'
 
 const AllRooms = () => {
@@ -42,15 +43,14 @@ const AllRooms = () => {
     setTodate(moment(dates[1]).format('YYYY-MM-DD'))
   }
 
-  const deleteRoom = async (id) => {
-    try {
-      const res = await axios.delete(`http://localhost:5000/room/RemoveRooms/${id}`)
-      const newRoom = users.filter(user => user._id !== id);
-      setusers(newRoom);
-    } catch (err) {
-      console.log(err);
-    }
+  const deleteRoom = id => {
+    axios.delete(`http://localhost:5000/room/RemoveRooms/${id}`)
+      .then(res => {
+        Swal.fire('Congrats', 'Remove Room Successfully', 'success')
+      })
+    setusers(users.filter(elem => elem._id !== id))
   }
+
 
   function SearchAdult() {
     axios.get(`http://localhost:5000/room/getadult/${adult}`)
