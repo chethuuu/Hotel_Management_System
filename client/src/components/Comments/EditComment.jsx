@@ -79,6 +79,7 @@ const EditComment = () => {
         .put(`http://localhost:5000/api/comments/${id}`, payload)
         .then((_res) => {
           alert("Updated!");
+          window.location.href = "/cusroom"
         })
         .catch((e) => console.error(e.message));
     }

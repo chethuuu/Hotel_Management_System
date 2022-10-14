@@ -59,6 +59,7 @@ const AddComment = () => {
         .post("http://localhost:5000/api/comments", payload)
         .then((res) => {
           alert("Added!");
+          window.location.href = "/cusroom"
           setEmail("");
           setComment("");
           setStars(0);
