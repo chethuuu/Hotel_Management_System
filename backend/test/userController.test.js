@@ -18,7 +18,7 @@ describe('Admin Model Test', () => {
     });
 
     it('create admin without required field should failed', async () => {
-        const adminWithoutRequiredField = new User({ Fullname: 'minoshadmin' });
+        const adminWithoutRequiredField = new User({ Fullname: 'minosh imantha ' });
         let err;
         try {
             const savedAdminWithoutRequiredField = await adminWithoutRequiredField.save();
